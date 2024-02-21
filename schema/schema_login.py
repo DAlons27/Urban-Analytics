@@ -8,7 +8,7 @@ class loginModel(BaseModel):
 
     username: str
     password: str
-    password_confirmation: str
+    confirm_password: str
 
     # Validaciones del campo username
     @field_validator('username')
@@ -84,7 +84,7 @@ class loginModel(BaseModel):
         """
 
         pw1 = self.password
-        pw2 = self.password_confirmation
+        pw2 = self.confirm_password
         user = self.username
 
         if pw1 is not None and pw2 is not None and pw1 != pw2:
